@@ -1,0 +1,40 @@
+<div class="container">
+
+<div class="search-container">
+ <form class="search-form" [formGroup]="searchForm" (ngSubmit)="doSearch(searchForm)">
+  <input type="search" class="search-input" formControlName="searchInput" required placeholder="Search for a movie..." /> 
+  <button type="submit" class="btn btn-primary">Search</button> 
+  <div class="error">
+    <div *ngIf="submitted && f.searchInput.errors">
+       <div *ngIf="f.searchInput.errors.required">Required field.</div>
+       <div *ngIf="f.searchInput.errors.minLength">Must be at least 3 characters long.</div>
+    </div>
+  </div>
+</form>
+</div>
+
+<div class="no-results" *ngIf="!movies">
+  <h1>No result was found</h1>
+</div>
+
+<div class="list-group" *ngIf="movies">
+  <a href="#" *ngFor="let movie of movies" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{movie.Title}}</h5>
+      <small class="text-muted">{{movie.Runtime}}</small>
+    </div>
+    
+    <p class="mb-1"><a class="poster" href="{{movie.Poster}}">{{movie.Poster}}</a></p>
+    <small class="text-muted">{{movie.Director}} - {{movie.Year}} </small>
+    <div class="float-right movie-box-footer">
+      <!--<button type="button" class="btn btn-primary" (click)="openDialog(movie)">View more details</button> -->
+    </div>
+  </a>
+</div>
+
+
+<div class="load-more">
+  <!--<button class="load-more-btn" mat-raised-button color="primary">Load More</button>-->
+</div>
+
+</div>

@@ -1,0 +1,58 @@
+div.container{
+  margin-top:100px;
+}
+
+.list-group-item{
+    margin-top:20px;
+}
+
+.movie-box-footer button{
+    margin-right: 5px;
+}
+
+.load-more{
+    text-align: center;
+    margin: 20px;
+}
+
+button.load-more-btn{
+    width: 200px;
+}
+
+p.mb-1 {
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  white-space: nowrap;
+}
+
+h1{
+    text-align: center;
+}
+
+.search-input{
+    width: 350px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 10px 15px;
+    color: #000;
+}
+
+.search-form{
+    width:500px;
+}
+
+.search-input, button{
+    outline: none;
+}
+
+.error {
+    margin-left: 20px;
+    font-size: 15px;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.no-results{
+    margin-top:50px;
+}
+
